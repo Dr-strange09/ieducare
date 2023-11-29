@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+        integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="/static/css/style.css">
+    <title>Ieducare</title>
+</head>
+
+<body>
+    {{>navbar data=details}}
+    {{>slider slides=slides}}
+
+    {{!-- banner 1 section --}}
+    <section class="banner1_section py-5 background1">
+        <div class="container text-center">
+            <div class="row">
+                <div class="col-md-12">
+                    <h1>Start exploring new technologies !</h1>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur a maxime maiores saepe
+                        provident sint assumenda dolore? Dolore soluta beatae nostrum vitae itaque!</p>
+                    <button class="btn  btn-outline-primary">Start Explore</button>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+
+    {{!-- services section --}}
+    <section id="services-section" class="py-3">
+        <div class="container">
+            <h1 class="text-center text-secondary">Services We Provide</h1>
+            <div class="row mt-5">
+                {{#each services}}
+                <div class="col-md-4">
+                    <div class="card">
+                        <div class="container text-center py-3">
+                            <i class="{{this.icon}} service_icon"></i>
+                            <h5 class="card-title">{{this.title}}</h5>
+                            <p>{{this.description}}</p>
+                            <a href="{{this.link}}">{{this.linkText}}</a>
+                            <a href="#2" class="ml-3">Support </a>
+                        </div>
+                    </div>
+                </div>
+                {{/each}}
+
+            </div>
+        </div>
+    </section>
+
+    {{!-- banner section 2 --}}
+    <section class="banner2_section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 text-center pt-5">
+                    {{!-- left side --}}
+                    <h3>
+                        We work for Your Intelligence!
+                    </h3>
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus ut enim laboriosam odio
+                        maxime possimus pariatur ad repudiandae aut exercitationem!
+                    </p>
+                    <button class="btn btn-primary">Click Me</button>
+                </div>
+                <div class="col-md-6 text-center py-3">
+                    <img src="/static/images/graphics_1.jpeg" style="max-height:350px" alt="">
+                </div>
+            </div>
+        </div>
+    </section>
+    {{!-- banner 3 section --}}
+    <section class="banner2_section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 text-center py-3">
+                    <img src="/static/images/graphics_2.jpeg" class="img-fluid" style="max-height:350px" alt="">
+                </div>
+                <div class="col-md-6 text-center pt-5">
+                    {{!-- Right side --}}
+                    <h3>
+                        We work for Your Intelligence!
+                    </h3>
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus ut enim laboriosam odio
+                        maxime possimus pariatur ad repudiandae aut exercitationem!
+                    </p>
+                    <button class="btn btn-primary">Click Here</button>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    {{!-- contact us section --}}
+    <section id="contact_us_section" class="py-5 background1">
+        <div class="container">
+            <h3 class="text-center text-secondary">Contact us</h3>
+            <div class="row">
+                <div class="col-md-12">
+
+                    <form action="/process-contact-form" method="post">
+                        <div class="mb-3">
+                            <label for="exampleInputEmail1" class="form-label"> Your Email address</label>
+                            <input name="email" type="email" class="form-control" id="exampleInputEmail1"
+                                aria-describedby="emailHelp">
+                            <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="exampleInputPassword1" class="form-label">Your Password</label>
+                            <input name="password" type="password" class="form-control" id="exampleInputPassword1">
+                        </div>
+
+
+
+                        <div class="form-floating my-2">
+                            <textarea name="query" style="height: 260px;" class="form-control"
+                                placeholder="Enter Your query " id="queryField" style="height: 100px"></textarea>
+                            <label for="queryField">Your Query</label>
+                        </div>
+
+                        <div class="container text-center">
+                            <button type="submit" class="btn btn-dark btn-lg">Submit</button>
+                        </div>
+
+
+                    </form>
+
+
+
+
+                </div>
+            </div>
+        </div>
+
+    </section>
+    {{!-- about section --}}
+    <section id="about_section" class="about_section py-5">
+        <div class="container text-center">
+            <div class="row">
+                <div class="col-md-12">
+                    <h3>About This Side</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque fugiat odit consectetur quis ipsam
+                        incidunt aliquam, adipisci perspiciatis non aliquid magni corporis, dolorem veritatis sequi
+                        deserunt asperiores voluptas sint ducimus sit voluptatibus repudiandae voluptatem.</p>
+                    <button class="btn btn-success btn-lg">
+                        Contact Us
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer id="find-us" class="footer background1">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="text-center text-center pt-2">
+
+                        @ 2023 Copyright:<p>LearncodeWithHitesh</p>
+
+                        <a class="text-reset fw-bold" href="https://Ieducare.com"> Ieducare</a>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    </footer>
+
+
+
+
+
+
+
+
+</body>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+    crossorigin="anonymous"></script>
+
+</html>
